@@ -3,12 +3,43 @@
  */
 package client;
 
+import com.amazonaws.services.sqs.AmazonSQS;
+import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
+import com.amazonaws.services.sqs.model.Message;
+
+import java.util.List;
+import java.util.function.Consumer;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
+        String queue ="";
+        System.out.println(args[0]);
+        switch (args[0]){
+            case "a":
+                queue +="";
+                break;
+            case "b":
+                queue +="";
+                break;
+            case "c":
+                queue +="";
+                break;
+        }
+
+        List<Message> messages = sqs.receiveMessage(queue).getMessages();
+        System.out.println(messages.toString());
+        // Create a consumer for the 'MyQueue'
+//        Consumer consumer = session.createConsumer("https://sqs.us-east-1.amazonaws.com/065392430690/messageQue");
+//// Start receiving incoming messages
+//        connection.start();
+
+
     }
 }
+
+

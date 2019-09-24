@@ -3,12 +3,40 @@
  */
 package publisher;
 
+import com.amazonaws.services.sqs.AmazonSQS;
+import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
+import com.amazonaws.services.sqs.model.SendMessageRequest;
+
 public class App {
+
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
+//        String queueUrl = sqs.getQueueUrl("messageQue").getQueueUrl();
+        String queue ="";
+        System.out.println(args[0]);
+        switch (args[0]){
+            case "a":
+                queue +="";
+                break;
+            case "b":
+                queue +="";
+                break;
+            case "c":
+                queue +="";
+                break;
+        }
+
+        SendMessageRequest send_msg_request = new SendMessageRequest()
+                .withQueueUrl(queue)
+                .withMessageBody("hello world")
+                .withDelaySeconds(5);
+        sqs.sendMessage(send_msg_request);
+
+        System.out.println("done sending");
     }
+
 }
