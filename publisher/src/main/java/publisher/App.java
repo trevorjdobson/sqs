@@ -15,7 +15,6 @@ public class App {
 
     public static void main(String[] args) {
         final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-//        String queueUrl = sqs.getQueueUrl("messageQue").getQueueUrl();
         String queue ="";
         System.out.println(args[0]);
         switch (args[0]){
