@@ -31,8 +31,17 @@ public class App {
                 break;
         }
 
-        List<Message> messages = sqs.receiveMessage(queue).getMessages();
-        System.out.println(messages.toString());
+//        List<Message> messages = sqs.receiveMessage(queue).getMessages();
+//        System.out.println(messages.toString());
+
+        // Create a new connection factory with all defaults (credentials and region) set automatically
+//        SQSConnectionFactory connectionFactory = new SQSConnectionFactory(
+//                new ProviderConfiguration(),
+//                AmazonSQSClientBuilder.defaultClient()
+//        );
+//
+//// Create the connection.
+//        SQSConnection connection = connectionFactory.createConnection();
         // Create a consumer for the 'MyQueue'
 //        Consumer consumer = session.createConsumer("https://sqs.us-east-1.amazonaws.com/065392430690/messageQue");
 //// Start receiving incoming messages
