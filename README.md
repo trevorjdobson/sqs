@@ -12,3 +12,13 @@ This is a command line app that sends a default hello world message to a given S
   * cd into `client` directory
   * run `./gradlew run --args='a'`
   * that command gets a message grom the a queue, you can also do `'b'` or `'c'` for the argument to send it to the b or c queue.
+
+## Lambda Functionality
+The client code has been converted to Java and deployed to lambda
+
+[Link to Java Directory](https://github.com/trevorjdobson/sqs/lambda-client)
+
+## Cloudwatch
+![CloudWatch Image](cloudwatch.png)
+## Lambda
+![Lambda Dashboard](lambda.png)
