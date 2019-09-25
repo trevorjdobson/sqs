@@ -16,7 +16,7 @@ This is a command line app that sends a default hello world message to a given S
 ## Lambda Functionality
 The client code has been converted to Java and deployed to lambda
 
-[Link to Java Directory](https://github.com/trevorjdobson/sqs/lambda-client)
+[Link to Java Directory](https://github.com/trevorjdobson/sqs/tree/master/lambda-client)
 
 ## Cloudwatch
 ![CloudWatch Image](cloudwatch.png)
